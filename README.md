@@ -49,7 +49,16 @@ Endurance Pitwall brings live race information, strategy, stint planning and tea
 
 ![Post-Race Report](Post%20race.png)
 
+## Latest release
+
+**Endurance Pitwall 1.6.2**
+
+- PayPal/support donation button removed from the application.
+- Built using the automated GitHub Actions Windows pipeline.
+- Installer SHA-256: `2ca3275f8d90f35cc60d9ff4b4160a9c6eb7e5f2de61c0b56764f9bf74751694`
+
 ## Download
+
 
 Official releases are published here:
 
@@ -86,7 +95,7 @@ The automated build process:
 
 This improves build repeatability and reduces reliance on a local development machine. It does **not** make the private source independently auditable and it is not a substitute for digital code signing.
 
-Future public releases built through this pipeline should include their SHA-256 checksum in the release notes.
+Public releases built through this pipeline include their SHA-256 checksum in the release notes.
 
 Digital code signing may be added later.
 
