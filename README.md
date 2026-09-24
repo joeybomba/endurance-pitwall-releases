@@ -96,7 +96,29 @@ Compare the result with the SHA-256 value published with that release. If the va
 
 ## Screenshots
 
-Screenshots of the main dashboard, stint planner, live race view, track map and Display Mode will be added here.
+### Live Pitwall – Display Mode
+
+![Endurance Pitwall Display Mode](Live%20demo.png)
+
+### Live Pitwall – Main View
+
+![Endurance Pitwall Main View](Live%20demo2.png)
+
+### Race Planner – Overview
+
+![Race Planner Overview](Stint%20Builder.png)
+
+### Driver Availability & Stint Setup
+
+![Driver Availability and Stint Setup](Stint%20Builder%202.png)
+
+### Race Plan PDF Export
+
+![Race Plan PDF Export](Pdf%20Export%20planning.png)
+
+### Post-Race Report
+
+![Post-Race Report](Post%20race.png)
 
 ## Security
 
