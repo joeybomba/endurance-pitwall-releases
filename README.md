@@ -71,16 +71,37 @@ This repository currently serves primarily as the **official release/download re
 
 The application source code and complete reproducible build workflow are **not yet published here**. We do not want the automatically generated GitHub “Source code” archives on a release page to be mistaken for proof that the installer was built from public source.
 
-Improving release transparency is an active goal. Planned improvements include:
+Release transparency has been improved with an automated Windows build pipeline hosted on GitHub Actions.
 
-- Public build workflow
-- Automated Windows builds
-- SHA-256 checksums in release notes
-- Build provenance / attestations where practical
-- Better release documentation
-- Digital code signing when practical
+The application source repository remains private, but official builds can now be produced on a clean GitHub-hosted Windows runner instead of being built only on a developer PC.
 
-Until those are in place, please treat each release as an unsigned community-built Windows application and only download it from this repository.
+The automated build process:
+
+- installs the declared Python dependencies;
+- downloads the official Cloudflare `cloudflared` Windows binary;
+- builds the application with PyInstaller;
+- builds the Windows installer with Inno Setup;
+- generates a SHA-256 checksum;
+- uploads the installer and checksum as a GitHub Actions artifact.
+
+This improves build repeatability and reduces reliance on a local development machine. It does **not** make the private source independently auditable and it is not a substitute for digital code signing.
+
+Future public releases built through this pipeline should include their SHA-256 checksum in the release notes.
+
+Digital code signing may be added later.
+
+## Build process
+
+Endurance Pitwall's Windows installer can now be built automatically using GitHub Actions on a clean Windows runner.
+
+The source repository itself is private. This means users cannot independently review the complete source code, but the automated pipeline provides a more consistent and traceable build process than a local-only build.
+
+A successful automated build produces:
+
+- `Endurance Pitwall Setup.exe`
+- `Endurance Pitwall Setup.exe.sha256`
+
+The project does not claim that an automated build or matching checksum proves that software is vulnerability-free. It provides provenance and integrity information for the distributed file.
 
 ## How Endurance Pitwall connects
 
@@ -110,7 +131,7 @@ Download new releases from the official Releases page.
 
 ## Verifying a file
 
-Release notes may include a SHA-256 hash for the installer.
+Automated GitHub builds generate a SHA-256 hash for the installer. Public releases built through that workflow should publish the matching SHA-256 value in their release notes.
 
 On Windows PowerShell you can calculate the hash of your downloaded installer with:
 
